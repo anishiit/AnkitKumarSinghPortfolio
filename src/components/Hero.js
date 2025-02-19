@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <Image
-            src="/placeholder.svg?height=200&width=200"
+            src="/image.jpg"
             alt="Ankit Kumar Singh"
             width={200}
             height={200}
