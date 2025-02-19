@@ -35,13 +35,15 @@ export default function Header() {
 
   const handleNavClick = (e, href) => {
     e.preventDefault()
-    const target = document.querySelector(href)
-    if (target) {
-      const scroll = (window).locomotiveScroll
-      if (scroll) {
-        scroll.scrollTo(target)
+    const targetId = href.replace('#', '')
+    const element = document.getElementById(targetId)
+
+      if (element) {
+        element.scrollIntoView({
+        behavior: 'smooth'
+      })
       }
-    }
+    
     setIsMobileMenuOpen(false)
   }
 
