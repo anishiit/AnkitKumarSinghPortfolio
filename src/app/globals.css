@@ -2,20 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Remove locomotive-scroll import here since we're importing in JS */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-gray-900 text-white; /* Use Tailwind classes instead of CSS vars */
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-indigo-600 to-amber-500 bg-clip-text text-transparent;
+}
+
+/* Add these locomotive-scroll overrides */
+[data-scroll-container] {
+  @apply min-h-screen;
+}
+
+html.has-scroll-smooth {
+  @apply overflow-hidden;
+}
+
+html.has-scroll-dragging {
+  @apply select-none;
+}
+
+.has-scroll-smooth body {
+  @apply overflow-hidden;
 }
