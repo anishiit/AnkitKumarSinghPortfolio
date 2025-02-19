@@ -6,6 +6,15 @@ import { motion } from "framer-motion"
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa"
 
 export default function Hero() {
+    const handleDownload = () => {
+        // Create a link element
+        const link = document.createElement('a');
+        link.href = 'Nehru Fellowship.pdf'; // Make sure this matches your PDF filename exactly
+        link.download = 'Nehru Fellowship.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
   return (
     <section id="home" className="min-h-screen flex items-center justify-center">
       <div className="container mx-auto px-4 text-center">
@@ -34,6 +43,7 @@ export default function Hero() {
             className="bg-gradient-to-r from-blue-500 to-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-600 hover:to-orange-600 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleDownload}
           >
             Download Resume
           </motion.button>
